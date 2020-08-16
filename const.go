@@ -11,7 +11,7 @@ const (
 type BillingPlanStatus string
 
 const (
-	BillingPlanStatusActive   BillingPlanStatus = "ACTIVE"
+	BillingPlanStatusActive BillingPlanStatus = "ACTIVE"
 )
 
 type IntervalUnit string
@@ -52,6 +52,24 @@ const (
 	UserActionSubscribeNow UserAction = "SUBSCRIBE_NOW"
 )
 
+type PayeePreferred string
+
+const (
+	Unrestricted             PayeePreferred = "UNRESTRICTED"
+	ImmediatePaymentRequired PayeePreferred = "IMMEDIATE_PAYMENT_REQUIRED"
+)
+
+type PaymentMethodCategory string
+
+const (
+	CustomerPresentSinglePurchase PaymentMethodCategory = "CUSTOMER_PRESENT_SINGLE_PURCHASE"
+	CustomerNotPresentRecurring   PaymentMethodCategory = "CUSTOMER_NOT_PRESENT_RECURRING"
+	CustomerPresentRecurringFirst PaymentMethodCategory = "CUSTOMER_PRESENT_RECURRING_FIRST"
+	CustomerPresentUnscheduled    PaymentMethodCategory = "CUSTOMER_PRESENT_UNSCHEDULED"
+	CustomerNotPresentUnscheduled PaymentMethodCategory = "CUSTOMER_NOT_PRESENT_UNSCHEDULED"
+	MailOrderTelephoneOrder       PaymentMethodCategory = "MAIL_ORDER_TELEPHONE_ORDER"
+)
+
 type SubscriptionStatus string
 
 const (
@@ -65,6 +83,7 @@ const (
 
 //Doc: https://developer.paypal.com/docs/api/subscriptions/v1/#definition-transaction
 type SubscriptionTransactionStatus string
+
 const (
 	SubscriptionCaptureStatusCompleted         SubscriptionTransactionStatus = "COMPLETED"
 	SubscriptionCaptureStatusDeclined          SubscriptionTransactionStatus = "DECLINED"
@@ -74,11 +93,12 @@ const (
 )
 
 type CaptureType string
+
 const (
 	CaptureTypeOutstandingBalance CaptureType = "OUTSTANDING_BALANCE"
 )
 
-type ProductType     string
+type ProductType string
 type ProductCategory string //Doc: https://developer.paypal.com/docs/api/catalog-products/v1/#definition-product_category
 const (
 	ProductTypePhysical ProductType = "PHYSICAL"
@@ -87,15 +107,15 @@ const (
 
 	ProductCategorySoftware                                  ProductCategory = "SOFTWARE"
 	ProductCategorySoftwareComputerAndDataProcessingServices ProductCategory = "COMPUTER_AND_DATA_PROCESSING_SERVICES"
-	ProductCategorySoftwareDigitalGames               ProductCategory = "DIGITAL_GAMES"
-	ProductCategorySoftwareGameSoftware               ProductCategory = "GAME_SOFTWARE"
-	ProductCategorySoftwareGames                      ProductCategory = "GAMES"
-	ProductCategorySoftwareGeneral                    ProductCategory = "GENERAL"
-	ProductCategorySoftwareGraphicAndCommercialDesign ProductCategory = "GRAPHIC_AND_COMMERCIAL_DESIGN"
-	ProductCategorySoftwareOemSoftware                ProductCategory = "OEM_SOFTWARE"
-	ProductCategorySoftwareOnlineGaming               ProductCategory = "ONLINE_GAMING"
-	ProductCategorySoftwareOnlineGamingCurrency       ProductCategory = "ONLINE_GAMING_CURRENCY"
-	ProductCategorySoftwareOnlineServices             ProductCategory = "ONLINE_SERVICES"
-	ProductCategorySoftwareOther                      ProductCategory = "OTHER"
-	ProductCategorySoftwareServices                   ProductCategory = "SERVICES"
+	ProductCategorySoftwareDigitalGames                      ProductCategory = "DIGITAL_GAMES"
+	ProductCategorySoftwareGameSoftware                      ProductCategory = "GAME_SOFTWARE"
+	ProductCategorySoftwareGames                             ProductCategory = "GAMES"
+	ProductCategorySoftwareGeneral                           ProductCategory = "GENERAL"
+	ProductCategorySoftwareGraphicAndCommercialDesign        ProductCategory = "GRAPHIC_AND_COMMERCIAL_DESIGN"
+	ProductCategorySoftwareOemSoftware                       ProductCategory = "OEM_SOFTWARE"
+	ProductCategorySoftwareOnlineGaming                      ProductCategory = "ONLINE_GAMING"
+	ProductCategorySoftwareOnlineGamingCurrency              ProductCategory = "ONLINE_GAMING_CURRENCY"
+	ProductCategorySoftwareOnlineServices                    ProductCategory = "ONLINE_SERVICES"
+	ProductCategorySoftwareOther                             ProductCategory = "OTHER"
+	ProductCategorySoftwareServices                          ProductCategory = "SERVICES"
 )

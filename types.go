@@ -178,9 +178,16 @@ type (
 		Locale             string             `json:"locale,omitempty"`
 		ShippingPreference ShippingPreference `json:"shipping_preference,omitempty"`
 		UserAction         UserAction         `json:"user_action,omitempty"`
+		PaymentMethod      PaymentMethod      `json:"payment_method,omitempty"`
 		//LandingPage        string `json:"landing_page,omitempty"` // not found in documentation
 		ReturnURL string `json:"return_url,omitempty"`
 		CancelURL string `json:"cancel_url,omitempty"`
+	}
+
+	PaymentMethod struct {
+		PayerSelected  string                `json:"payer_selected,omitempty"`
+		PayeePreferred PayeePreferred        `json:"payee_preferred,omitempty"`
+		Category       PaymentMethodCategory `json:"category,omitempty"`
 	}
 
 	// Authorization struct
